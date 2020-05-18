@@ -34,3 +34,14 @@ Based on following criteria
   * Instance-based 
   * Model-based
   
+  
+# 　Main Challenge of Machine Learning
+* Insufficient Quantity of Training Data
+* Nonrepresentative Training Data
+  * Sample is too small - sampling noise 
+  * Sample is large enough but wrong sampling method - sampling bais 
+* Poor Quality Data
+* Irrelevant Features
+* Overfitting/ Underfitting the Training Data
+
+
