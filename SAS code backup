@@ -1,0 +1,30 @@
+/** Pull all exceptions booked in 2020**/
+
+%let today = %sysfunc(today());
+%put today = &today;
+
+%let dt3 = %sysfunc(putn(%sysfunc(intnx(mon,&today.,-3,E)),date.9));
+%put dt3 = &dt3
+
+
+%macro pull():
+  
+  %do i=0 %to 4;
+  %let yyyymm=%sysfunc(putn(%sysfunc(intnx(month, %sysfunc(inputn(&dt3,date9.)),&i,E)),yymmn6.));
+  %put yyymm=&yyyymm;
+  
+data _null_;
+call symput("mm",substr(strip(&yyyymm),5,2));
+call symput("yy",substr(strip(&yyyymm),3,2));
+run;
+
+%put mm=&mm yy=&yy;
+
+%let mmyy=&mm.&yy;
+%put mmyy = &mmyy;
+
+
+...
+
+%end;
+
