@@ -1,5 +1,7 @@
 /** Pull all exceptions booked in 2020**/
 
+/** Date code ----repeatable**/
+
 %let today = %sysfunc(today());
 %put today = &today;
 
